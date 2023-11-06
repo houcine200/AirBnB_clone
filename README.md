@@ -71,9 +71,9 @@ The project file structure is organized as follows:
 
 ## Contributors
 
-- Guillaume (Project Mentor)
+- Guillaume (Project Mentor
 - [Houcine Walaq](https://github.com/houcine200/) (Team Member)
-- [Hamza Elimali](https://github.com/Reallynoobcoder/) (Team Member)
+- [Hamza Elimali](https://github.com/Reallynoobcoder/) (Team Memb)
 
 ---
 >>>>>>> main
