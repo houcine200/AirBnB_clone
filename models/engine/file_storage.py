@@ -21,6 +21,7 @@ class FileStorage:
             json.dump(dict_obj, jfile)
 
     def reload(self):
+        from models.base_model import BaseModel
         try:
             with open(FileStorage.__file_path, "r") as file:
                 dict_to_obj = json.load(file)
