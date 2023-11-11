@@ -13,6 +13,9 @@ from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
+    """
+    Command interpreter class.
+    """
     prompt = "(hbnb)"
 
     class_names = {
@@ -25,16 +28,30 @@ class HBNBCommand(cmd.Cmd):
         "Review": Review, }
 
     def do_quit(self, arg):
+        """
+        Quit the command-line interpreter.
+        """
         return True
 
     def do_EOF(self, arg):
+        """
+        Handle End-of-File condition.
+        """
         print()
         return True
 
     def emptyline(self):
+        """
+        Do nothing on an empty line.
+        """
         pass
 
     def do_create(self, arg):
+        """
+        Create a new instance of a specified class.
+
+        Prints the ID of the newly created instance.
+        """
         if not arg:
             print("** class name missing **")
         elif arg not in self.class_names:
@@ -45,6 +62,11 @@ class HBNBCommand(cmd.Cmd):
             print(new_instance.id)
 
     def do_show(self, arg):
+        """
+        Show the string representation of an instance.
+
+        Prints the string representation of the instance.
+        """
         if not arg:
             print("** class name missing **")
         args = arg.split()
@@ -62,6 +84,11 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_destroy(self, arg):
+        """
+        Destroy an instance by removing it from the storage.
+
+        Removes the instance from the storage.
+        """
         if not arg:
             print("** class name missing **")
         args = arg.split()
@@ -79,6 +106,11 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, arg):
+        """
+        Display all instances or instances of a specified class.
+
+        Prints the string representation of instances.
+        """
         if not arg:
             all_instances = storage.all().values()
         else:
@@ -95,6 +127,11 @@ class HBNBCommand(cmd.Cmd):
             print([str(instance) for instance in all_instances])
 
     def do_update(self, arg):
+        """
+        Update an instance's attribute.
+
+        Updates the specified attribute of the instance.
+        """
         if not arg:
             print("** class name missing **")
             return
