@@ -18,7 +18,7 @@ class HBNBCommand(cmd.Cmd):
     """
     Command interpreter class.
     """
-    prompt = "(hbnb)"
+    prompt = "(hbnb) "
 
     class_names = {
         "BaseModel": BaseModel,
