@@ -7,8 +7,8 @@ from models.state import State
 from models.city import City
 from models.place import Place
 from models.amenity import Amenity
-
 from models.review import Review
+
 
 class FileStorage:
     __file_path = "file.json"
@@ -16,7 +16,7 @@ class FileStorage:
 
     def all(self):
         return FileStorage.__objects
-    
+
     def new(self, obj):
         key = f"{obj.__class__.__name__}.{obj.id}"
         FileStorage.__objects[key] = obj
@@ -34,7 +34,6 @@ class FileStorage:
             with open(FileStorage.__file_path, "r") as file:
                 dict_to_obj = json.load(file)
             for key, val in dict_to_obj.items():
-                    FileStorage.__objects[key] = eval(val["__class__"] + '(**val)')
+                FileStorage.__objects[key] = eval(val["__class__"] + '(**val)')
         except FileNotFoundError:
             pass
-    

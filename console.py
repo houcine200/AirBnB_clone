@@ -11,6 +11,7 @@ from models.review import Review
 
 from models import storage
 
+
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb)"
 
@@ -21,8 +22,8 @@ class HBNBCommand(cmd.Cmd):
         "City": City,
         "Amenity": Amenity,
         "Place": Place,
-        "Review": Review,     
-                   } 
+        "Review": Review, }
+
     def do_quit(self, arg):
         return True
 
@@ -42,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
             new_instance = self.class_names[arg]()
             new_instance.save()
             print(new_instance.id)
-        
+
     def do_show(self, arg):
         if not arg:
             print("** class name missing **")
@@ -59,7 +60,7 @@ class HBNBCommand(cmd.Cmd):
             print(instance)
         else:
             print("** no instance found **")
-        
+
     def do_destroy(self, arg):
         if not arg:
             print("** class name missing **")
@@ -89,8 +90,6 @@ class HBNBCommand(cmd.Cmd):
             all_instances = [instance for key, instance in storage.all().items() if key.split(".")[0] == class_name]
 
             print([str(instance) for instance in all_instances])
-
-    
 
     def do_update(self, arg):
         if not arg:
@@ -138,12 +137,6 @@ class HBNBCommand(cmd.Cmd):
         instance = storage.all()[key]
         setattr(instance, attribute_name, attribute_value)
         instance.save()
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
