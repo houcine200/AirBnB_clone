@@ -87,7 +87,10 @@ class HBNBCommand(cmd.Cmd):
             if class_name not in self.class_names:
                 print("** class doesn't exist **")
                 return
-            all_instances = [instance for key, instance in storage.all().items() if key.split(".")[0] == class_name]
+            all_instances = [
+                instance for key, instance in storage.all().items()
+                if key.split(".")[0] == class_name
+                  ]
 
             print([str(instance) for instance in all_instances])
 
@@ -130,8 +133,8 @@ class HBNBCommand(cmd.Cmd):
         attribute_value = None
         try:
             attribute_value = eval(attribute_value_str)
-        except:
-            print("** invalid value **")
+        except Exception as e:
+            print(f"** invalid value: {e} **")
             return
 
         instance = storage.all()[key]
