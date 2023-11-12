@@ -4,21 +4,21 @@ import unittest
 from models.state import State
 
 
-class TestAmenity(unittest.TestCase):
+class TestState(unittest.TestCase):
 
     def setUp(self):
-        self.new_user = State()
+        self.new_state = State()
 
     def tearDown(self):
-        del self.new_user
+        del self.new_state
 
-    def test_user_type(self):
-        self.assertEqual(self.new_user.name, "")
+    def test_state_attributes(self):
+        self.assertEqual(self.new_state.name, "")
 
-    def test_user_attribute(self):
-        self.new_user.name = "Betty"
+    def test_state_attribute_assignment(self):
+        self.new_state.name = "Florida"
 
-        self.assertEqual(self.new_user.name, "Betty")
+        self.assertEqual(self.new_state.name, "Florida")
 
 
 if __name__ == '__main__':
