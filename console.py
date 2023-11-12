@@ -53,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
 
         Prints the ID of the newly created instance.
         """
-        if arg == None:
+        if arg is None:
             print("** class name missing **")
         elif arg not in self.class_names:
             print("** class doesn't exist **")
@@ -68,7 +68,7 @@ class HBNBCommand(cmd.Cmd):
 
         Prints the string representation of the instance.
         """
-        if arg == None:
+        if arg is None:
             print("** class name missing **")
             return
 
@@ -99,7 +99,7 @@ class HBNBCommand(cmd.Cmd):
 
         Removes the instance from the storage.
         """
-        if arg == None:
+        if arg is None:
             print("** class name missing **")
             return
 
@@ -132,7 +132,7 @@ class HBNBCommand(cmd.Cmd):
 
         Prints the string representation of instances.
         """
-        if arg == None:
+        if arg is None:
             all_instances = storage.all().values()
         else:
             args = arg.split()
@@ -153,7 +153,7 @@ class HBNBCommand(cmd.Cmd):
 
         Updates the specified attribute of the instance.
         """
-        if arg == None:
+        if arg is None:
             print("** class name missing **")
             return
 
