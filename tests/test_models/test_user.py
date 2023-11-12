@@ -21,15 +21,16 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.last_name, "")
 
     def test_user_attribute(self):
-        self.new_user.first_name = "Betty"
-        self.new_user.last_name = "Bar"
-        self.new_user.email = "airbnb@mail.com"
-        self.new_user.password = "root"
+        self.new_user.first_name = "Houcine"
+        self.new_user.last_name = "Hamza"
+        self.new_user.email = "my_airbnb98@mail.com"
+        self.new_user.password = "azerty"
 
-        self.assertEqual(self.new_user.email, "airbnb@mail.com")
-        self.assertEqual(self.new_user.first_name, "Betty")
-        self.assertEqual(self.new_user.last_name, "Bar")
-        self.assertEqual(self.new_user.password, "root")
+        self.assertEqual(self.new_user.email, "my_airbnb98@mail.com")
+        self.assertEqual(self.new_user.password, "azerty")
+        self.assertEqual(self.new_user.first_name, "Houcine")
+        self.assertEqual(self.new_user.last_name, "Hamza")
+        
 
 
 if __name__ == '__main__':
