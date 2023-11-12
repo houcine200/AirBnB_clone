@@ -10,7 +10,6 @@ from models.city import City
 from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
-
 from models import storage
 
 
@@ -54,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
 
         Prints the ID of the newly created instance.
         """
-        if not arg:
+        if arg == None:
             print("** class name missing **")
         elif arg not in self.class_names:
             print("** class doesn't exist **")
@@ -69,13 +68,13 @@ class HBNBCommand(cmd.Cmd):
 
         Prints the string representation of the instance.
         """
-        if not arg:
+        if arg == None:
             print("** class name missing **")
             return
 
         args = arg.split()
 
-        if len(args) < 2:
+        if len(args) <= 1:
             print("** instance id missing **")
             return
 
@@ -100,12 +99,12 @@ class HBNBCommand(cmd.Cmd):
 
         Removes the instance from the storage.
         """
-        if not arg:
+        if arg == None:
             print("** class name missing **")
             return
 
         args = arg.split()
-        if len(args) < 1:
+        if len(args) <= 0:
             print("** class name missing **")
             return
 
@@ -113,7 +112,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
 
-        if len(args) < 2:
+        if len(args) <= 1:
             print("** instance id missing **")
             return
 
@@ -133,7 +132,7 @@ class HBNBCommand(cmd.Cmd):
 
         Prints the string representation of instances.
         """
-        if not arg:
+        if arg == None:
             all_instances = storage.all().values()
         else:
             args = arg.split()
@@ -154,7 +153,7 @@ class HBNBCommand(cmd.Cmd):
 
         Updates the specified attribute of the instance.
         """
-        if not arg:
+        if arg == None:
             print("** class name missing **")
             return
 
@@ -188,12 +187,11 @@ class HBNBCommand(cmd.Cmd):
 
         attribute_value_str = args[3]
 
-        # Try to cast the attribute value to the appropriate type
         attribute_value = None
         try:
             attribute_value = eval(attribute_value_str)
-        except Exception as e:
-            print(f"** invalid value: {e} **")
+        except Exception as err:
+            print(f"** invalid value: {err} **")
             return
 
         instance = storage.all()[key]
