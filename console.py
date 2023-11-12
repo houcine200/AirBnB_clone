@@ -132,7 +132,7 @@ class HBNBCommand(cmd.Cmd):
 
         Prints the string representation of instances.
         """
-        if if not arg:
+        if not arg:
             all_instances = storage.all().values()
         else:
             args = arg.split()
@@ -153,7 +153,7 @@ class HBNBCommand(cmd.Cmd):
 
         Updates the specified attribute of the instance.
         """
-        if if not arg:
+        if not arg:
             print("** class name missing **")
             return
 
