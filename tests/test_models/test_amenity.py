@@ -16,9 +16,9 @@ class TestAmenity(unittest.TestCase):
         self.assertEqual(self.new_user.name, "")
 
     def test_user_attribute(self):
-        self.new_user.name = "Root"
+        self.new_user.name = "houcine"
 
-        self.assertEqual(self.new_user.name, "Root")
+        self.assertEqual(self.new_user.name, "houcine")
 
 
 if __name__ == '__main__':
