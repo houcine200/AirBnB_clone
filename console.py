@@ -146,7 +146,7 @@ class HBNBCommand(cmd.Cmd):
                 if key.split(".")[0] == class_name
                   ]
 
-            print([str(instance) for instance in all_instances])
+        print([str(instance) for instance in all_instances])
 
     def do_update(self, arg):
         """
