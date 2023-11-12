@@ -17,22 +17,22 @@ class TestBaseModel(unittest.TestCase):
         Test case for creating a BaseModel instance with keyword arguments.
         """
         kwargs = {
-            "id": "test_id",
-            "created_at": "2023-01-01T12:00:00",
-            "updated_at": "2023-01-02T14:30:00",
-            "custom_attribute": "some_value"
+            "id": "tempo_id",
+            "created_at": "2023-02-01T08:30:00",
+            "updated_at": "2023-02-02T16:45:00",
+            "custom_attribute": "tempo_value"
         }
         instance = BaseModel(**kwargs)
 
-        self.assertEqual(instance.id, "test_id")
+        self.assertEqual(instance.id, "tempo_id")
         self.assertEqual(
-            instance.created_at, datetime.fromisoformat("2023-01-01T12:00:00")
+            instance.created_at, datetime.fromisoformat("2023-02-01T08:30:00")
             )
         self.assertEqual(
-            instance.updated_at, datetime.fromisoformat("2023-01-02T14:30:00")
+            instance.updated_at, datetime.fromisoformat("2023-02-02T16:45:00")
             )
         self.assertEqual(
-            getattr(instance, "custom_attribute", None), "some_value"
+            getattr(instance, "custom_attribute", None), "tempo_value"
             )
 
     def test_creation_without_kwargs(self):
@@ -62,15 +62,15 @@ class TestBaseModel(unittest.TestCase):
         Test case for converting a BaseModel instance to a dictionary.
         """
         instance = BaseModel(
-            id="test_id", created_at="2023-01-01T12:00:00",
-            custom_attribute="some_value"
+            id="tempo_id", created_at="2023-02-01T08:30:00",
+            custom_attribute="tempo_value"
             )
         instance_dict = instance.to_dict()
 
         self.assertEqual(instance_dict["__class__"], "BaseModel")
-        self.assertEqual(instance_dict["id"], "test_id")
-        self.assertEqual(instance_dict["created_at"], "2023-01-01T12:00:00")
-        self.assertEqual(instance_dict.get("custom_attribute"), "some_value")
+        self.assertEqual(instance_dict["id"], "tempo_id")
+        self.assertEqual(instance_dict["created_at"], "2023-02-01T08:30:00")
+        self.assertEqual(instance_dict.get("custom_attribute"), "tempo_value")
 
 
 if __name__ == '__main__':
