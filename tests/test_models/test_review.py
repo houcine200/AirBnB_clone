@@ -6,7 +6,7 @@ from models.place import Place
 from models.user import User
 
 
-class TestAmenity(unittest.TestCase):
+class Testreview(unittest.TestCase):
 
     def setUp(self):
         self.new_user = Review()
@@ -24,11 +24,11 @@ class TestAmenity(unittest.TestCase):
     def test_user_attribute(self):
         self.new_user.place_id = self.p_id.id
         self.new_user.user_id = self.u_id.id
-        self.new_user.text = "Hello world"
+        self.new_user.text = "Nice place"
 
         self.assertEqual(self.new_user.place_id, self.p_id.id)
         self.assertEqual(self.new_user.user_id, self.u_id.id)
-        self.assertEqual(self.new_user.text, "Hello world")
+        self.assertEqual(self.new_user.text, "Nice place")
 
 
 if __name__ == '__main__':
